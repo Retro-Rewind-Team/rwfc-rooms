@@ -200,6 +200,14 @@ hr {
     color: #f38ba8;
 }
 
+.connmap {
+    color: #a6e3a1;
+}
+
+.connmap-warning {
+    color: #f38ba8;
+}
+
 table {
     width: 100%;
     max-width: 100%;
