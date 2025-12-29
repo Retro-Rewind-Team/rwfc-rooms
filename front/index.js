@@ -136,21 +136,17 @@ function makePlayer(player, priv) {
     let connValue = player.conn_map || "";
     let connTd;
 
-    if (/^1+$/.test(connValue)) {
-    connTd = makeTd("❗", "connmap-warning");
-	
-    } else if (connValue.includes("0") || connValue.includes("1")) {
-    connTd = makeTd("⚠", "connmap-warning");
+    if (/^1+$/.test(connValue))
+        connTd = makeTd("❗", "connmap-warning");
+    else if (connValue.includes("0") || connValue.includes("1"))
+        connTd = makeTd("⚠", "connmap-warning");
+    else if (/^2+$/.test(connValue))
+        connTd = makeTd("✓", "connmap");
+    else
+        connTd = makeTd("??", "connmap");
 
-    } else if (/^2+$/.test(connValue)) {
-    connTd = makeTd("✓", "connmap");
-
-    } else {
-    connTd = makeTd("??", "connmap");
-}
-
-connTd.style.fontFamily = "'JetBrains Mono', sans-serif";
-tr.append(connTd);
+    connTd.style.fontFamily = "'JetBrains Mono', sans-serif";
+    tr.append(connTd);
 
     if (!priv) {
         let ohtd;
