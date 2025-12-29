@@ -133,6 +133,19 @@ function makePlayer(player, priv) {
     tr.append(makeTd(player.ev ? player.ev : "??"));
     tr.append(makeTd(player.eb ? player.eb : "??"));
 
+    let connValue = player.conn_map || "";
+    let connTd;
+    
+    if (connValue.includes("0") || connValue.includes("1")) {
+        connTd = makeTd("⚠", "connmap-warning");
+    } else if (/^2+$/.test(connValue)) {
+        connTd = makeTd("✓", "connmap");
+    } else {
+        connTd = makeTd("??", "connmap");
+    }
+    connTd.style.fontFamily = "'JetBrains Mono', sans-serif";
+    tr.append(connTd);
+
     if (!priv) {
         let ohtd;
         if (player.openhost == "true")
@@ -158,6 +171,7 @@ function makePlayerInfo(players, priv) {
     tHeadTr.append(makeTh("Friend Code"));
     tHeadTr.append(makeTh("VR"));
     tHeadTr.append(makeTh("BR"));
+    tHeadTr.append(makeTh("NAT"));
     if (!priv)
         tHeadTr.append(makeTh("OH"));
     tHead.append(tHeadTr);
