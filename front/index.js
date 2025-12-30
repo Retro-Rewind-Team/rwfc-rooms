@@ -137,7 +137,7 @@ function makePlayer(player, priv) {
     let connTd;
 
     if (/^1+$/.test(connValue))
-        connTd = makeTd("❗", "connmap-warning");
+        connTd = makeTd("!", "connmap-warning");
     else if (connValue.includes("0") || connValue.includes("1"))
         connTd = makeTd("⚠", "connmap-warning");
     else if (/^2+$/.test(connValue))
