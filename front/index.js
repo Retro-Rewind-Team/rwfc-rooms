@@ -136,14 +136,16 @@ function makePlayer(player, priv) {
     let connValue = player.conn_map || "";
     let connTd;
 
-    if (/^1+$/.test(connValue))
-        connTd = makeTd("!", "connmap-warning");
-    else if (connValue.includes("0") || connValue.includes("1"))
-        connTd = makeTd("⚠", "connmap-warning");
+    if (connValue.includes("0"))
+    connTd = makeTd("⚠", "connmap-warning");
+    else if (connValue.includes("1"))
+    connTd = makeTd("⏳", "connmap-pending");
     else if (/^2+$/.test(connValue))
-        connTd = makeTd("✓", "connmap");
+    connTd = makeTd("✓", "connmap");
+    else if (connValue.includes("3"))
+    connTd = makeTd("!", "connmap-problem");
     else
-        connTd = makeTd("??", "connmap");
+    connTd = makeTd("??", "connmap");
 
     connTd.style.fontFamily = "'JetBrains Mono', sans-serif";
     tr.append(connTd);
