@@ -202,22 +202,18 @@ hr {
 
 .connmap {
     color: #a6e3a1;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 .connmap-warning {
     color: #f38ba8;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 .connmap-pending {
     color: #f9e2af;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 .connmap-problem {
     color: #f38ba8;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 table {
