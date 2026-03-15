@@ -138,12 +138,12 @@ function makePlayer(player, priv) {
 
     if (connValue.includes("0"))
     connTd = makeTd("⚠", "connmap-warning");
+    else if (connValue.includes("3"))
+    connTd = makeTd("!", "connmap-problem");    
     else if (connValue.includes("1"))
     connTd = makeTd("⏳", "connmap-pending");
     else if (/^2+$/.test(connValue))
     connTd = makeTd("✓", "connmap");
-    else if (connValue.includes("3"))
-    connTd = makeTd("!", "connmap-problem");
     else
     connTd = makeTd("??", "connmap");
 
