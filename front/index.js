@@ -141,7 +141,7 @@ function makePlayer(player, priv) {
     else if (connValue.includes("0"))
         connTd = makeTd("⚠", "connmap-warning");
     else if (connValue.includes("1"))
-        connTd = makeTd("⏳", "connmap-pending");
+        connTd = makeTd("⧗", "connmap-pending");
     else if (/^2+$/.test(connValue))
         connTd = makeTd("✓", "connmap");
     else
