@@ -241,7 +241,7 @@ function updateCachedGroups(response) {
 
 async function updateGroups() {
     try {
-        const response = await fetch("http://rwfc.net/api/groups");
+        const response = await fetch("https://rwfc.net/api/wfc/groups");
 
         var json = null;
 
