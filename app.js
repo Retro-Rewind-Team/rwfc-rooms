@@ -1,4 +1,7 @@
 const express = require("express");
+const fs = require("fs");
+
+const config = JSON.parse(fs.readFileSync("./config.json"));
 
 var app = express();
 app.use(express.json());
@@ -241,7 +244,8 @@ function updateCachedGroups(response) {
 
 async function updateGroups() {
     try {
-        const response = await fetch("https://rwfc.net/api/wfc/groups");
+        console.log(config);
+        const response = await fetch(config.groupsEndpoint);
 
         var json = null;
 
